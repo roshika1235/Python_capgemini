@@ -17,16 +17,19 @@ class BankAccount():
             print("invalid amount")
     def deposit_1(self,amount):
         if amount<0:
-            print("")
-        self.balance+=amount
+            print("unable to deposit")
+        else:
+            self.balance+=amount
         print(self.balance)
     def display_acc_details(self):
         print(self.balance,self.deposit,self.bname,self.min_b)
     @classmethod
     def min_1(cls,update_min_balance):
-        cls.min_b=update_min_balance
-        print(cls.min_b) 
-
+        if update_min_balance<0:
+            print("can't update")
+        else:
+            cls.min_b=update_min_balance
+            print(cls.min_b) 
 b1=BankAccount("rosh",10,300)
 b1.min_1(500)
 b2=BankAccount("sir",20,200)
