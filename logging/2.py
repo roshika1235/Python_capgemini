@@ -1,6 +1,6 @@
 import logging
 logging.basicConfig(
-    filename="bank.log",
+    filename="BankAccount.log",
     level=logging.INFO,
     format="%(asctime)s -%(levelname)s -%(message)s"
 )
@@ -19,9 +19,9 @@ class BankAccount():
             if self.balance-amount>BankAccount.min_b:
                 logging.info("withdraw suceessful %s",self.balance)
             else:
-                logging.error("exceeding min balance %s",amount)
+                logging.error("exceeding min balance %s")
         else:
-            logging.warning("invalid amount %s",amount)
+            logging.warning("invalid amount %s")
     def deposit_1(self,amount):
         if amount<0:
             logging.warning("unable to deposit %s")
@@ -44,3 +44,4 @@ b1.display_acc_details()
 b2.display_acc_details()
 b1.new_withdraw(10)
 print(b1.balance,b1.deposit)
+
